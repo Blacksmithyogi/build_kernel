@@ -4,19 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       kernel_url:
-        description: 'Kernel github url perf-kernel: https://github.com/ask9027/kernel_xiaomi_courbet.git, alfakernel: https://github.com/ask9027/kernel_xiaomi_sm6150.git'
+        description: 'Kernel github url A15: https://github.com/Blacksmithyogi/kernel_xiaomi_courbet.git'
         required: true
-        default: 'https://github.com/ask9027/kernel_xiaomi_courbet.git'
+        default: 'https://github.com/Blacksmithyogi/kernel_xiaomi_courbet.git'
         type: string
       kernel_branch:
-        description: "github branch like 'perf-ksu-miui'"
+        description: "A15'"
         required: true
-        default: 'perf-ksu-miui'
-        type: string
-      kernel_type:
-        description: 'Kernel Type PerfKernel or AlfaKernel'
-        required: true
-        default: 'PerfKernel'
+        default: 'A15'
         type: string
       recurse_submodule:
         description: "some kernel source use submodule(true/false)"
@@ -41,7 +36,7 @@ jobs:
       KERNEL_DIR: "courbet-kernel"
       ARCH: "arm64"
       SUBARCH: "arm64"
-      KBUILD_BUILD_USER: "ask9027"
+      KBUILD_BUILD_USER: "giyokun07"
       KBUILD_BUILD_HOST: "github"
       KERNEL_URL: ${{ github.event.inputs.kernel_url }}
       KERNEL_BRANCH: ${{ github.event.inputs.kernel_branch }}
